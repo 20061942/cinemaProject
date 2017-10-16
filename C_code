@@ -1,24 +1,87 @@
 #include <stdio.h>
+#include <stdlib.h>
+
+void add()
+{
+	char content[50];
+	FILE *f = fopen("record.txt", "a");	//opening record.txt for adding record
+	
+	if (f == NULL)
+	{
+	    printf("Error opening file!\n");
+	    exit(1);
+	}
+	
+	printf("\nPlease enter 1)Movie Booking Number, 2)Name of Customer, 3)Name of Movie, 4)Movie Schedule, 5)Time, 6)Number of Guests, 7)House Number, 8)Ticket Type, 9)Total Fee:\n");
+	gets(content);
+	//scanf("%s",content);
+	//puts(content);
+	
+	return;
+}
+/*
+void display()
+{
+	
+}
+
+void modify()
+{
+	
+}
+
+void search()
+{
+	
+}
+
+void deleteRecord()	//delete is constrution word of C language, so we need to use a different method name
+{
+	
+}
+*/
+
 int main()
 {
+	char option;
 	
 	printf("\n               *** Welcome to HK Grand SPACE Movie Ticketing Management System 2017 ***\n");
 	printf("\n               *** This system is developed by CCIT4020 class No. CL-06 Group No.___ ***\n");
 	printf("\n <---Basic functions--->");
 	printf("\n 1. Add New movie Ticketing Record(s):");
-printf("\n 2. Add New movie Ticketing Record(s):");	             
-printf("\n 3. Add New movie Ticketing Record(s):");	           
-printf("\n 4. Add New movie Ticketing Record(s):");	
+	printf("\n 2. Display All Movie Ticketing Records:");	             
+	printf("\n 3. Modify Movie Ticketing Record(s):");	           
+	printf("\n 4. Search Movie Ticketing Record(s):");	          
+	printf("\n 5. Delete Movie Ticketing Record(s):");	
+	printf("\nWhat is your option (1-5)? [q for quit]");
+	printf("\nMy Option: ");
+	scanf("%c",&option);	//getting option from user
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	switch(option)
+	{
+		case '1':
+			add();
+			break;
+		/*case '2':
+			display();
+			break;
+		case '3':
+			modify();
+			break;
+		case '4':
+			search();
+			break;
+		case '5':
+			deleteRecord();
+			break;*/
+		case 'Q': case 'q':
+			printf("Exiting system...");
+			exit(1);
+			break;
+		default:
+			printf("Invaild input, please input integer (1-5)");
+			break;
+	}
 	
 	return 0;
 }
